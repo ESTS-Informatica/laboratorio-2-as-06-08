@@ -18,21 +18,22 @@ public class Property {
      * @param price The property price.
      */
     public Property(String description, double price) {
-
+        this.description = description;
+        this.price = price;
     }
 
     /**
      * Id selector.
      */
     public int getId() {
-        return -1;
+        return id;
     }
 
     /**
      * Description selector.
      */
     public String getDescription() {
-        return "";
+        return description;
     }
 
     /**
@@ -48,7 +49,7 @@ public class Property {
      * Price selector.
      */
     public double getPrice() {
-        return -1;
+        return price;
     }
     
     /**
@@ -62,6 +63,8 @@ public class Property {
 
     @Override
     public String toString() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append("Descrição   :").append(getDescription()).append("\n").append("Preco   :").append(getPrice());
+        return sb.toString();
     }
 }

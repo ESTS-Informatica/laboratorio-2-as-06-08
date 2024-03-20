@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,11 @@ public class Company {
      * Constructor of class src.Company
      */
     public Company() {
-
+        clients = new ArrayList<>();
+        sellers = new ArrayList<>();
+        sells = new ArrayList<>();
+        //clients.add(new User("José Manuel", 91111111, "zemanel@yahoo.com"));
+        //clients.add(new User("António Francisco",92222)
     }
 
     /**
@@ -31,7 +36,7 @@ public class Company {
      * @return This company clients.
      */
     public List<User> getClients() {
-        return null;         // dummy implementation
+        return clients;         // dummy implementation
     }
 
     /**
@@ -40,7 +45,7 @@ public class Company {
      * @return This company sellers.
      */
     public List<User> getSellers() {
-        return null;         // dummy implementation
+        return sellers;         // dummy implementation
     }
 
     /**
@@ -49,7 +54,7 @@ public class Company {
      * @return This company's properties.
      */
     public List<Property> getProperties() {
-        return null;         // dummy implementation
+        return properties;         // dummy implementation
     }
 
     /**
@@ -58,7 +63,7 @@ public class Company {
      * @return This company sells.
      */
     public List<Sell> getSells() {
-        return null;         // dummy implementation
+        return sells;         // dummy implementation
     }
 
     /**
@@ -68,8 +73,13 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerClient(User client) {
-        return true;         // dummy implementation
-    }
+        for(User user: clients){
+            if(user.getPhone().equals(client.getPhone())){
+                return false;
+            }
+        }
+        return clients.add(client);
+}
 
     /**
      * Register a seller.
@@ -78,7 +88,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSeller(User seller) {
-        return true;         // dummy implementation
+        return sellers.add(seller);         // dummy implementation
     }
 
     /**
@@ -98,7 +108,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSell(Sell sell) {
-        return true;         // dummy implementation
+        return sells.add(sell);         // dummy implementation
     }
 
     /**
@@ -120,7 +130,13 @@ public class Company {
      * @return The total number of sells in the year.
      */
     public int calculateSellsOfTheYear(int year) {
-        return 0;         // dummy implementation
+        int count = 0;
+        for(Sell sell: sells){
+            if(sell.getDate().getYear() == year){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -130,7 +146,23 @@ public class Company {
      * @return The name of the seller of the year.
      */
     public String findSellerOfTheYear(int year) {
-        return null;         // dummy implementation
+        String bestSeller ="";
+        int bestSells = 0;
+        for(User seller:sellers){
+            int noSells = 0;
+            for(Sell sell: sells){
+
+                if(sell.getSeller().equals(seller) && sell.getDate().getYear() == year){
+                    noSells++;
+                }
+            }
+
+            if (noSells > bestSells) {
+                bestSells = noSells;
+                bestSeller = seller.getName();
+            }
+        }
+        return bestSeller;
     }
 
 }
