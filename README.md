@@ -25,10 +25,10 @@ Protótipo de uma aplicação para facilitar a gestão de uma imobiliária. A ap
 
 As classes fornecidas correspondem à estrutura das classes da aplicação, com as assinaturas dos métodos públicos, sem a implementação do código interno. Vamos preparar o programa para que possa compilar e vamos criar alguns testes básicos que serão executados repetidamente ao longo da implementação do código interno da aplicação.
 
-1. Inclua todas as classes fornecidas com este enunciado `User`, `Property`, `Sell` e `Company` num projeto BlueJ deste laboratório, no repositório local criado com o GitHub Desktop.
+1. Inclua todas as classes fornecidas com este enunciado `src.User`, `src.Property`, `src.Sell` e `src.Company` num projeto BlueJ deste laboratório, no repositório local criado com o GitHub Desktop.
 2. Altere os métodos de forma a retornar valores fixos de modo a possibilitar a compilação das classes. Por exemplo, os métodos que retornam referências de objetos retornam o valor `null`, os métodos que retornam inteiros retornam o valor -1, etc.
 
-A classe `Property` representa um imóvel. Crie a classe de teste `PropertyTest`, para a classe `Property`.
+A classe `src.Property` representa um imóvel. Crie a classe de teste `test.PropertyTest`, para a classe `src.Property`.
 
 1. Crie o método de teste `testConstructor` que testa o construtor. Este método de teste deve criar o objeto property1 (ver dados na **Tabela 1**) como uma Fixture e verificar que o objeto é criado com os valores fornecidos, recorrendo aos seletores do preço e da descrição para isso.
 2. Implemente o código interno do construtor e também de todos os seletores da classe (necessários para verificar que o construtor inicializou o objeto com os valores corretos).
@@ -43,7 +43,7 @@ Tabela 1 - Imóvel a criar para o teste do construtor
 
 ### Nível 2:
 
-O método `toString` da classe `Property` deve retornar uma string no formato apresentado na listagem 1. 
+O método `toString` da classe `src.Property` deve retornar uma string no formato apresentado na listagem 1. 
 
 1. Crie o método de teste `testToString`.
 2. Implemente o código interno do método `toString`.
@@ -58,7 +58,7 @@ Listagem 1 - Exemplo de String a devolver pelo método toString para o imóvel d
 
 ### Nível 3:
 
-A classe `Company` representa uma imobiliária. 
+A classe `src.Company` representa uma imobiliária. 
 
 | Identificador | Nome             | Telefone  | E-mail                    |
 |:-------------:|:----------------:|:---------:|:-------------------------:|
@@ -68,8 +68,8 @@ A classe `Company` representa uma imobiliária.
 | **seller2**   | Rodrigo Rodrigues    | 966777152 | roro@remax.pt         |
 Tabela 2 - Objetos da fixtures para a classe CompanyTest<br/>
 
-1. Crie a classe de teste `CompanyTest`, para a classe `Company`.
-2. Defina na classe `CompanyTest` uma Fixture com um objeto `Company` e todos os objetos da tabela 2. Utilize o método existente `setUp()` para este efeito.
+1. Crie a classe de teste `CompanyTest`, para a classe `src.Company`.
+2. Defina na classe `CompanyTest` uma Fixture com um objeto `src.Company` e todos os objetos da tabela 2. Utilize o método existente `setUp()` para este efeito.
 3. Crie, nesta classe, o método de teste `testConstructor` que testa o construtor. Este método de teste cria verifica que o construtor instancia as coleções da imobiliária configurada no método `setUp()`, ou seja, que após a criação os atributos não são null.
 4. Implemente o código interno do construtor e dos seletores da classe.
 5. Execute todos os testes criados.

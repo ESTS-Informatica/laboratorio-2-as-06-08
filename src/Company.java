@@ -1,6 +1,4 @@
-
 import java.util.ArrayList;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -21,7 +19,7 @@ public class Company {
     private ArrayList<Sell> sells;
 
     /**
-     * Constructor of class Company
+     * Constructor of class src.Company
      */
     public Company() {
 

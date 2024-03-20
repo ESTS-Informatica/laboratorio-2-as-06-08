@@ -1,7 +1,5 @@
-
-
 /**
- * User can either be a client or a seller.
+ * src.User can either be a client or a seller.
  *
  * @author POO
  * @version 03/2024
@@ -19,7 +17,7 @@ public class User {
     private String email;
 
     /**
-     * Constructor of class User.
+     * Constructor of class src.User.
      *
      * @param name The user name.
      * @param phone The user phone.

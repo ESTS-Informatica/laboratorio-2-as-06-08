@@ -1,4 +1,3 @@
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -23,7 +22,7 @@ public class Sell {
     private LocalDate date;
 
     /**
-     * Constructor of class Sell
+     * Constructor of class src.Sell
      *
      * @param client The client to whom the sell is done.
      * @param seller The seller who performed the sell.
